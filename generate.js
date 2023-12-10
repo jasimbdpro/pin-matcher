@@ -9,6 +9,9 @@ let generateButton = document.getElementById('generate-btn-id')
 let myGeneration = document.getElementById('myGeneration')
 generateButton.addEventListener('click', function () {
     myGeneration.value = generatedNumber
+    const notifyGenerate = document.getElementById('notify-click-generate')
+    notifyGenerate.style.display = 'none'
+
 })
 
 // Submit part
