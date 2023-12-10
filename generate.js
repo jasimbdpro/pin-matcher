@@ -28,4 +28,20 @@ const myInputValue = (myValue) => {
     else {
         myInput.value = myValue;
     }
+
 }
+
+// combination part 
+const mySubmit = document.querySelector('.submit-btn')
+mySubmit.addEventListener('click', function () {
+    const notifyFalse = document.getElementById('notify-false')
+    const notifyTrue = document.getElementById('notify-true')
+    if (myInput.value === myGeneration.value) {
+        notifyTrue.style.display = 'block'
+        notifyFalse.style.display = 'none'
+    }
+    else {
+        notifyFalse.style.display = 'block'
+        notifyTrue.style.display = 'none'
+    }
+})
