@@ -20,7 +20,9 @@ calcBody.forEach((button) => {
     })
 })
 const myInputValue = (myValue) => {
-    if (myValue === 'C') return myInput.value = '';
+    const notifyGenerate = document.getElementById('notify-click-generate')
+    if (myGeneration.value === '') return notifyGenerate.style.display = 'block';
+    else if (myValue === 'C') return myInput.value = '';
     else if (myValue === '<') return myInput.value = myInput.value.toString().slice(0, -1);
     else if (myInput.value !== '' && myValue !== '<' && myValue !== 'C') {
         myInput.value = myInput.value + myValue
@@ -36,7 +38,9 @@ const mySubmit = document.querySelector('.submit-btn')
 mySubmit.addEventListener('click', function () {
     const notifyFalse = document.getElementById('notify-false')
     const notifyTrue = document.getElementById('notify-true')
-    if (myInput.value === myGeneration.value) {
+    const notifyGenerate = document.getElementById('notify-click-generate')
+    if (myGeneration.value === '') return notifyGenerate.style.display = 'block';
+    else if (myInput.value === myGeneration.value) {
         notifyTrue.style.display = 'block'
         notifyFalse.style.display = 'none'
     }
